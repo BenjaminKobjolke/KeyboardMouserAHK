@@ -33,7 +33,7 @@ In addition, click, drag operation is also possible by the keyboard.
 ## Requirement & Install
 
 - You have AHK/AHK_L --> use KeyboardMouser.ahk
-- You don't have AHK/AHK_L --> use KeyboardMouser.exe(32bit) or KeyboardMouser_64.exe(64bit)
+- You don't have AHK/AHK_L --> use KeyboardMouser.exe
 
 ## Licence
 

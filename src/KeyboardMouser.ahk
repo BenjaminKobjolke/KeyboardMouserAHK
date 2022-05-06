@@ -345,9 +345,9 @@ KmCreateWindow:
 	}
 	km_WinPosX := km_WinCentorPosX - km_KBSizeW/2
 	km_WinPosY := km_WinCentorPosY - km_KBSizeH/2
-	Gui, Show, Minimize X%km_WinPosX% Y%km_WinPosY% W%km_KBSizeW% H%km_KBSizeH%
+	Gui, Show, NoActivate X%km_WinPosX% Y%km_WinPosY% W%km_KBSizeW% H%km_KBSizeH%
 	WinSet, Transparent, %km_Transparency%, ahk_id %km_ID%
-	Gui, Show, Restore
+	;Gui, Show, Restore
 
 
 Return
@@ -441,6 +441,37 @@ RecoverDragState:
         km_DragButton := ""
     }
 Return
+
+mouseCurrentMode := 0
+
+/*
++!s::	
+	if(mouseCurrentMode = 1) {
+		mouseCurrentMode := 0
+	} else {
+		mouseCurrentMode := 1
+	}
+	
+	if(mouseCurrentMode = 1) {
+		SetTimer, UpdateMousePosition, 10
+	} else {
+		ToolTip, Off!
+		SetTimer, UpdateMousePosition, Off
+	}
+return
+
+UpdateMousePosition:	
+	
+	GetkeyState, EnterKeyState, Enter
+	if(EnterKeyState = D)
+	{
+		; if the enter key is pressed, then the user input is the same as the key
+		MsgBox, %EnterKeyState%
+	}
+	ToolTip,  %EnterKeyState%
+	
+return
+*/
 
 ; move mouse cursor by 4 direction keys
 KmMoveMouseCursor(km_UserInput)
